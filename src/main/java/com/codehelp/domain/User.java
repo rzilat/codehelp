@@ -8,31 +8,31 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="User")
+@Table(name = "User")
 public class User {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(unique=true, nullable=false, precision=19)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(unique = true, nullable = false, precision = 19)
 	private long id;
-	
-	@Column(name="nom", nullable=false, length=255)
+
+	@Column(name = "nom", nullable = false, length = 255)
 	private String nom;
-	
-	@Column(name="prenom", nullable=false, length=255)
+
+	@Column(name = "prenom", nullable = false, length = 255)
 	private String prenom;
-	
-	@Column(name="email", nullable=false, length=255)
+
+	@Column(name = "email", nullable = false, length = 255)
 	private String email;
-	
-	@Column(name="rating")
+
+	@Column(name = "rating")
 	private long rating;
-	
-	@Column(name="participation")
+
+	@Column(name = "participation")
 	private long participation;
 
 	public User() {
-		
+
 	}
 
 	public long getId() {
@@ -82,11 +82,5 @@ public class User {
 	public void setParticipation(long participation) {
 		this.participation = participation;
 	}
-	
-	
-	
-	
-
-	
 
 }
