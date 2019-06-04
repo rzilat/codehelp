@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 
 import com.codehelp.domain.Reponse;
+
 import com.codehelp.repository.ReponseRepository;
 
 @Service
@@ -27,6 +28,16 @@ public class ReponseService {
 	
 	public List<Reponse> findAll(){
 		return this.reponseRepository.findAll();
+		
+	}
+	
+	public void deleteReponse(long id) {
+		 reponseRepository.deleteById(id);
+		
+	}
+	
+	public Reponse updateReponse(Reponse reponse) {
+		return this.reponseRepository.save(reponse);
 		
 	}
 

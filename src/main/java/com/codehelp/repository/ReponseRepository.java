@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import com.codehelp.domain.Reponse;
 
-@Repository("questionRepository")
+@Repository("reponseRepository")
 public interface ReponseRepository extends JpaRepository<Reponse,Long> {
 
 }

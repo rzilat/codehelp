@@ -7,32 +7,41 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "Reponse")
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
 public class Reponse {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="native")
 	@Column(unique = true, nullable = false, precision = 19)
-	private long id;
+	private long reponseId;
 	
 	@Column(name = "reponse", nullable = false, length = 255)
 	private String reponse;
 	
 	@Column(name = "rating", nullable = false, length = 255)
-	private String rating;
+	private long rating;
 
 	public Reponse() {
 		
 	}
 
-	public long getId() {
-		return id;
+	
+
+	public long getReponseId() {
+		return reponseId;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+
+
+	public void setReponseId(long reponseId) {
+		this.reponseId = reponseId;
 	}
+
+
 
 	public String getReponse() {
 		return reponse;
@@ -42,13 +51,19 @@ public class Reponse {
 		this.reponse = reponse;
 	}
 
-	public String getRating() {
+
+
+	public long getRating() {
 		return rating;
 	}
 
-	public void setRating(String rating) {
+
+
+	public void setRating(long rating) {
 		this.rating = rating;
 	}
+
+	
 	
 	
 	
