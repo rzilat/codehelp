@@ -1,11 +1,18 @@
 package com.codehelp.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -33,6 +40,12 @@ public class User {
 
 	@Column(name = "participation")
 	private long participation;
+
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Question> questions= new ArrayList<>();
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Reponse> reponses= new ArrayList<>();
 
 	public User() {
 
@@ -104,5 +117,10 @@ public class User {
 	public void setParticipation(long participation) {
 		this.participation = participation;
 	}
+
+
+
+	
+	
 
 }
