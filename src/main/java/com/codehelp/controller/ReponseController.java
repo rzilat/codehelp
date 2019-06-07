@@ -17,6 +17,8 @@ import com.codehelp.domain.Reponse;
 
 import com.codehelp.service.ReponseService;
 
+import io.swagger.annotations.ApiParam;
+
 @RestController
 @RequestMapping(value= "/codehelp")
 public class ReponseController {
@@ -55,6 +57,15 @@ public class ReponseController {
 		return new ResponseEntity <> (reponseService.updateReponse(reponse),HttpStatus.OK);
 		
 	}
+	
+	@RequestMapping(value= "/reponses/findByQuestionId/{questionId}", method=RequestMethod.GET)
+	public ResponseEntity<List<Reponse>> getReponsesByQuestionId(@PathVariable("questionId")long questionId)
+	
+	{
+		List<Reponse> reponseList= reponseService.findReponsesByQuestionId(questionId);
+		return new ResponseEntity<>(reponseList,HttpStatus.OK);
+	}
+	
 	
 
 }

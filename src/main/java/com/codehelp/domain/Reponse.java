@@ -24,7 +24,7 @@ public class Reponse {
 	@Column(name = "reponse", nullable = false, length = 255)
 	private String reponse;
 	
-	@Column(name = "rating", nullable = false, length = 255)
+	@Column(name = "rating", nullable = false)
 	private long rating;
 	
 	@ManyToOne
@@ -32,7 +32,7 @@ public class Reponse {
 	private User user;
 	
 	@ManyToOne
-    @JoinColumn(name="question_id",nullable=false)
+    @JoinColumn(name="questionId",nullable=false)
 	private Question question;
 
 	public Reponse() {
