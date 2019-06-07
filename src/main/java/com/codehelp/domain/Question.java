@@ -23,7 +23,7 @@ public class Question {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="native")
-	@Column(unique = true, nullable = false, precision = 19)
+	@Column(unique = true,name="questionId", nullable = false, precision = 19)
 	private long questionId;
 
 	@Column(name = "titre", nullable = false, length = 255)
@@ -37,6 +37,9 @@ public class Question {
 
 	@Column(name = "resolu", nullable = false, length = 255)
 	private boolean resolu;
+	
+	@Column(name= "vote",nullable =false)
+	private long vote;
 	
 	@ManyToOne
     @JoinColumn(name="user_id",nullable=false)
@@ -107,6 +110,20 @@ public class Question {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+
+
+	public long getVote() {
+		return vote;
+	}
+
+
+
+	public void setVote(long vote) {
+		this.vote = vote;
+	}
+	
+	
 	
 	
 

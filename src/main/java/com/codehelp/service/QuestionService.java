@@ -17,6 +17,8 @@ public class QuestionService {
 	
 	public void addQuestion(Question question) {
 		
+		question.setVote(0);
+		
 		questionRepository.save(question);
 		
 	}
@@ -38,6 +40,11 @@ public class QuestionService {
 	
 	public Question updateUser(Question question) {
 		return this.questionRepository.save(question);
+		
+	}
+	
+	public List<Question> findQuestionByTags(String tag){
+		return this.questionRepository.findByTagsContaining(tag);
 		
 	}
 

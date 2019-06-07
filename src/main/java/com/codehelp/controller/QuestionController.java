@@ -54,4 +54,10 @@ public class QuestionController {
 		
 	}
 	
+	@RequestMapping(value= "/questions/findQuestionByTag/{tag}", method= RequestMethod.GET)
+	public ResponseEntity <List<Question>> getAllQuestionsByTag(@PathVariable ("tag")String tag){
+		List<Question> questionsList= questionService.findQuestionByTags(tag);
+		return new ResponseEntity <> (questionsList,HttpStatus.OK) ;
+		}
+	
 }
