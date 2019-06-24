@@ -60,4 +60,9 @@ public class QuestionController {
 		return new ResponseEntity <> (questionsList,HttpStatus.OK) ;
 		}
 	
+	@RequestMapping(value= "/question/{id}/{vote}", method= RequestMethod.POST)
+	public void voteQuestion(@PathVariable("id")long id,@PathVariable("vote")int vote){
+		questionService.voteQuestion(id, vote);
+	}
+	
 }

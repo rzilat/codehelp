@@ -39,7 +39,7 @@ public class Question {
 	private boolean resolu;
 	
 	@Column(name= "vote",nullable =false)
-	private long vote;
+	private int vote;
 	
 	@ManyToOne
     @JoinColumn(name="user_id",nullable=false)
@@ -113,13 +113,13 @@ public class Question {
 
 
 
-	public long getVote() {
+	public int getVote() {
 		return vote;
 	}
 
 
 
-	public void setVote(long vote) {
+	public void setVote(int vote) {
 		this.vote = vote;
 	}
 	

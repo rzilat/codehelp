@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import com.codehelp.domain.Reponse;
 
 import com.codehelp.repository.ReponseRepository;
@@ -43,6 +44,14 @@ public class ReponseService {
 	public List<Reponse> findReponsesByQuestionId(long questionId) {
 		return this.reponseRepository.findReponsesByQuestionId(questionId);
 
+	}
+	
+	public void ratingReponse(long reponseId, int rating) {
+		Reponse reponse= reponseRepository.getOne(reponseId);
+		int oldRating=reponse.getRating();
+		int newRating=oldRating+rating;
+		reponse.setRating(newRating);
+		reponseRepository.save(reponse);
 	}
 
 }

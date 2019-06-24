@@ -66,6 +66,9 @@ public class ReponseController {
 		return new ResponseEntity<>(reponseList,HttpStatus.OK);
 	}
 	
-	
+	@RequestMapping(value= "/reponse/{id}/{rating}", method= RequestMethod.POST)
+	public void ratingReponse(@PathVariable("id")long id,@PathVariable("rating")int rating){
+		reponseService.ratingReponse(id, rating);
+	}
 
 }

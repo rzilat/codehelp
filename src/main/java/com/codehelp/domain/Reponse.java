@@ -25,7 +25,7 @@ public class Reponse {
 	private String reponse;
 	
 	@Column(name = "rating", nullable = false)
-	private long rating;
+	private int rating;
 	
 	@ManyToOne
     @JoinColumn(name="user_id",nullable=false)
@@ -63,13 +63,13 @@ public class Reponse {
 
 
 
-	public long getRating() {
+	public int getRating() {
 		return rating;
 	}
 
 
 
-	public void setRating(long rating) {
+	public void setRating(int rating) {
 		this.rating = rating;
 	}
 
