@@ -14,9 +14,12 @@ public class QuestionService {
 	
 	@Autowired
 	private QuestionRepository questionRepository;
+	@Autowired
+    private UserService userService;
 	
 	public void addQuestion(Question question) {
 		question.setVote(0);
+		userService.incrementParticipation(question.getUser().getUserId());
 		questionRepository.save(question);
 	}
 	

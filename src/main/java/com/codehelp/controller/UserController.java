@@ -55,6 +55,11 @@ public class UserController {
 		
 	}
 	
+	@RequestMapping(value= "/user/participation/{id}", method= RequestMethod.POST)
+	public void incrementParticipation(@PathVariable("id")long id){
+		userService.incrementParticipation(id);
+	}
+
 		
 	
 

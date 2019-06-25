@@ -41,4 +41,13 @@ public class UserService {
 		
 	}
 
+	public void incrementParticipation(long userId) {
+		User user = userRepository.getOne(userId);
+		long oldParticipation=user.getParticipation();
+		long newPaticipation=oldParticipation+1;
+		user.setParticipation(newPaticipation);
+		userRepository.save(user);
+		
+	}
+
 }

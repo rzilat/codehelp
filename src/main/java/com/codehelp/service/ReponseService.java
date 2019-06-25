@@ -15,9 +15,12 @@ public class ReponseService {
 
 	@Autowired
 	private ReponseRepository reponseRepository;
+	@Autowired
+    private UserService userService;
 
 	public void addReponse(Reponse reponse) {
 		reponse.setRating(0);
+		userService.incrementParticipation(reponse.getUser().getUserId());
 		reponseRepository.save(reponse);
 	}
 
