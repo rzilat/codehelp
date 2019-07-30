@@ -1,14 +1,11 @@
-/*package com.codehelp;
+package com.codehelp;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CodehelpApplicationTests {
+class CodehelpApplicationTest {
 
 	@Test
 	void contextLoads() {
 	}
 
 }
-*/
