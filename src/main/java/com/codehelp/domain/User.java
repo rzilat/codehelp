@@ -66,6 +66,15 @@ public class User {
 
 	
 
+	public User(String nom, String prenom, String email) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+	}
+
+
+
 	public long getUserId() {
 		return userId;
 	}
