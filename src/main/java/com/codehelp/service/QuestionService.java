@@ -35,7 +35,7 @@ public class QuestionService {
 		 questionRepository.deleteById(id);
 	}
 	
-	public Question updateUser(Question question) {
+	public Question updateQuestion(Question question) {
 		return this.questionRepository.save(question);
 	}
 	

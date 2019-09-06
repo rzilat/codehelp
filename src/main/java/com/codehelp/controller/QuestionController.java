@@ -49,8 +49,8 @@ public class QuestionController {
 	}
 	
 	@RequestMapping(value= "/question", method= RequestMethod.PUT)
-	public ResponseEntity <Question> updateUser(@RequestBody Question question) {
-		return new ResponseEntity <> (questionService.updateUser(question),HttpStatus.OK);
+	public ResponseEntity <Question> updateQuestion(@RequestBody Question question) {
+		return new ResponseEntity <> (questionService.updateQuestion(question),HttpStatus.OK);
 		
 	}
 	
